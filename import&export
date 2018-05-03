@@ -1,0 +1,35 @@
+1、语法
+  1.1 export:    
+      mongoexport -h 127.0.0.1 -d test -u tester -p 000000 -c chatLog -o C:\mogodb\pk.json
+
+  -h:指明数据库宿主机的IP
+
+  -u:指明数据库的用户名
+
+  -p:指明数据库的密码
+
+  -d:指明数据库的名字
+
+  -c:指明collection的名字(即表名)
+
+  -f:指明要导出那些列
+
+  -o:指明到要导出的文件名
+
+  -q:指明导出数据的过滤条件
+
+  1.2 import:
+      mongoimport -h 127.0.0.1 -d test -u tester -p 000000 -c pk --file pk.json
+  -h:指明数据库宿主机的IP
+
+  -u:指明数据库的用户名
+
+  -p:指明数据库的密码
+
+  -d:指明数据库的名字
+
+  -c:指明collection的名字
+
+  -f:指明要导入那些列
+2、操作流程
+打开cmd,进入mongo目录(bin上一层)，将pk.json文件放在该层目录下，最后执行导入指令即可.
